@@ -116,6 +116,9 @@ def detect_mood(file_path):
             onset_env = librosa.onset.onset_strength(y=y, sr=sr)
             tempo = librosa.beat.tempo(onset_envelope=onset_env, sr=sr)[0]
 
+        # Ensure tempo is a scalar
+        tempo = float(np.asarray(tempo).item())
+
         # ----------------------------
         # ⚡ ENERGY CALCULATION
         # ----------------------------
