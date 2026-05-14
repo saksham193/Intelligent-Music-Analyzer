@@ -1,0 +1,409 @@
+/* =========================
+   MAIN CHAT INPUT BAR
+========================= */
+
+.mega-chatbar + div[data-testid="stHorizontalBlock"] {
+    background: #1e1f2b;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 26px;
+
+    padding: 12px 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.35);
+
+    margin-top: 12px;
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+.mega-chatbar + div textarea {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    color: white !important;
+
+    font-size: 16px !important;
+
+    min-height: 55px !important;
+    max-height: 180px !important;
+
+    resize: none !important;
+
+    padding-top: 16px !important;
+}
+
+.mega-chatbar + div textarea:focus {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+
+/* =========================
+   REMOVE STREAMLIT STYLES
+========================= */
+
+.mega-chatbar + div .stTextArea {
+    margin-bottom: 0 !important;
+}
+
+.mega-chatbar + div .stTextArea > div {
+    border: none !important;
+    background: transparent !important;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.mega-chatbar + div button {
+    height: 52px !important;
+    width: 52px !important;
+
+    border-radius: 50% !important;
+
+    border: none !important;
+
+    background: #2c2d3f !important;
+
+    color: white !important;
+
+    font-size: 18px !important;
+
+    transition: 0.2s ease;
+}
+
+.mega-chatbar + div button:hover {
+    background: #3a3b52 !important;
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   SEND BUTTON
+========================= */
+
+button[kind="primary"] {
+    background: #5865f2 !important;
+}
+
+button[kind="primary"]:hover {
+    background: #6d78ff !important;
+}
+
+
+/* =========================
+   FILE UPLOADER FIX
+========================= */
+
+.mega-chatbar + div [data-testid="stFileUploader"] {
+    margin-bottom: 0 !important;
+}
+
+.mega-chatbar + div [data-testid="stFileUploader"] section {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.mega-chatbar + div [data-testid="stFileUploader"] small {
+    display: none !important;
+}
+
+.mega-chatbar + div [data-testid="stFileUploader"] button {
+    width: 52px !important;
+    height: 52px !important;
+
+    border-radius: 50% !important;
+
+    background: #2c2d3f !important;
+
+    font-size: 0 !important;
+}
+
+.mega-chatbar + div [data-testid="stFileUploader"] button::before {
+    content: "+" !important;
+
+    color: white;
+    font-size: 28px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .mega-chatbar + div[data-testid="stHorizontalBlock"] {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .mega-chatbar + div button {
+        width: 46px !important;
+        height: 46px !important;
+    }
+}
+/* =========================
+   UPLOAD ROW
+========================= */
+
+.upload-row {
+    margin-top: -6px;
+    margin-bottom: 18px;
+}
+
+.upload-row section {
+    border-radius: 16px !important;
+    border: 1px dashed rgba(255,255,255,0.12) !important;
+    background: rgba(255,255,255,0.02) !important;
+}
+
+.upload-row small {
+    display: none !important;
+}
+
+/* =========================
+   MUSIC RECOMMENDATIONS
+========================= */
+
+.music-card {
+    min-height: 112px;
+    max-height: 130px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr) 52px;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 14px;
+    margin: 10px 0;
+    overflow: hidden;
+    border-radius: 18px;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.035)),
+        rgba(20, 22, 32, 0.88);
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.30);
+    backdrop-filter: blur(18px);
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.music-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(87, 242, 135, 0.58);
+    background:
+        linear-gradient(135deg, rgba(34,197,94,0.18), rgba(255,255,255,0.055)),
+        rgba(18, 20, 30, 0.94);
+    box-shadow:
+        0 18px 42px rgba(0,0,0,0.42),
+        0 0 0 1px rgba(87,242,135,0.18),
+        0 0 24px rgba(87,242,135,0.16);
+}
+
+.music-cover-wrap {
+    width: 84px;
+    height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-cover {
+    width: 84px !important;
+    height: 84px !important;
+    object-fit: cover;
+    border-radius: 14px;
+    background: #171923;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.38);
+}
+
+.music-cover-fallback {
+    width: 84px;
+    height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.34), transparent 24%),
+        linear-gradient(135deg, #1ed760, #5865f2);
+    color: #ffffff;
+    font-size: 34px;
+    font-weight: 800;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.38);
+}
+
+.music-info {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.music-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    min-height: 20px;
+}
+
+.music-meta span {
+    max-width: 100%;
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.10);
+    color: rgba(255,255,255,0.72);
+    font-size: 11px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.music-title {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 750;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.music-artist {
+    color: rgba(255,255,255,0.68);
+    font-size: 13px;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.music-card-play {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.music-play-link {
+    width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    background: rgba(255,255,255,0.08) !important;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.music-play-link:hover {
+    transform: translateY(-2px) scale(1.05);
+    border-color: rgba(255,255,255,0.24) !important;
+    background: rgba(255,255,255,0.14) !important;
+}
+
+.music-play-link {
+    background: #1ed760 !important;
+    color: #06130a !important;
+    font-size: 16px !important;
+    box-shadow: 0 10px 22px rgba(30,215,96,0.25);
+}
+
+.music-action-row-marker {
+    display: none;
+}
+
+.music-action-row-marker + div[data-testid="stHorizontalBlock"] {
+    margin-top: -62px;
+    margin-bottom: 18px;
+    padding-right: 76px;
+    justify-content: flex-end;
+    pointer-events: none;
+}
+
+.music-action-row-marker + div[data-testid="stHorizontalBlock"] > div {
+    max-width: 52px;
+    pointer-events: auto;
+}
+
+.music-action-row-marker + div button {
+    width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    color: #ffffff !important;
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    background: rgba(255,255,255,0.08) !important;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.music-action-row-marker + div button:hover {
+    transform: translateY(-2px) scale(1.05);
+    border-color: rgba(255,255,255,0.24) !important;
+    background: rgba(255,255,255,0.14) !important;
+}
+
+@media (max-width: 640px) {
+    .music-card {
+        grid-template-columns: 72px minmax(0, 1fr) 42px;
+        min-height: auto;
+        max-height: none;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+    .music-cover-wrap,
+    .music-cover,
+    .music-cover-fallback {
+        width: 72px;
+        height: 72px;
+        border-radius: 12px;
+    }
+
+    .music-title {
+        font-size: 15px;
+    }
+
+    .music-artist {
+        font-size: 12px;
+    }
+
+    .music-play-link {
+        width: 38px !important;
+        height: 38px !important;
+        min-height: 38px !important;
+        font-size: 14px;
+    }
+
+    .music-action-row-marker + div[data-testid="stHorizontalBlock"] {
+        margin-top: -54px;
+        padding-right: 58px;
+    }
+
+    .music-action-row-marker + div button {
+        width: 38px !important;
+        height: 38px !important;
+        min-height: 38px !important;
+        font-size: 16px !important;
+    }
+}

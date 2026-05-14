@@ -1,70 +1,39 @@
-# ----------------------------
-# 🐍 Python
-# ----------------------------
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.so
-
-# ----------------------------
-# 📦 Virtual Environment
-# ----------------------------
 .venv/
 venv/
 env/
 
-# ----------------------------
-# 🧠 ML Models / Large Files
-# ----------------------------
-*.h5
-*.pkl
-*.joblib
-*.npy
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# ----------------------------
-# 📊 Dataset / Data Files
-# ----------------------------
-data/
-dataset/
-*.csv
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
 
-# ----------------------------
-# 🎧 Temp / Generated Files
-# ----------------------------
-temp/
-temp_audio.wav
-*.png
-*.jpg
-
-# ----------------------------
-# 📈 Jupyter Notebook
-# ----------------------------
-.ipynb_checkpoints/
-
-# ----------------------------
-# 🧾 Logs
-# ----------------------------
+cache/*
+!cache/.gitkeep
+logs/
 *.log
 
-# ----------------------------
-# 🖥️ OS Files
-# ----------------------------
+app/lyrics_engine/cache/*
+!app/lyrics_engine/cache/.gitkeep
+!app/lyrics_engine/cache/audio/
+app/lyrics_engine/cache/audio/*
+!app/lyrics_engine/cache/audio/.gitkeep
+
+outputs/
+generated/
+temp/
+tmp/
+
+datasets/**/*.zip
+datasets/**/*.tar
+datasets/**/*.tar.gz
+
 .DS_Store
 Thumbs.db
-
-# ----------------------------
-# ⚙️ IDE / Editor
-# ----------------------------
-.vscode/
-.idea/
-
-# ----------------------------
-# 🚀 Streamlit Cache
-# ----------------------------
-.streamlit/
-
-# ----------------------------
-# 🔒 Environment Variables
-# ----------------------------
-.env
+desktop.ini
